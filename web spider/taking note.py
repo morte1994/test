@@ -40,24 +40,39 @@ __author__ = 'ss-pc'
 #每个http应答对象response包含数字状态码
 
 #1.Openers：
-当你获取一个URL你使用一个opener(一个urllib2.OpenerDirector的实例)。
-正常情况下，我们使用默认opener：通过urlopen。
-但你能够创建个性的openers。
-2.Handles：
-Openers使用处理器handlers，所有的“繁重”工作由handlers处理。
-每个handlers知道如何通过特定协议打开URLs，或者如何处理URL打开时的各个方面。
-例如HTTP重定向或者HTTP cookies。
+#当你获取一个URL你使用一个opener(一个urllib2.OpenerDirector的实例)。
+#正常情况下，我们使用默认opener：通过urlopen。
+#但你能够创建个性的openers。
+#2.Handles：
+#Openers使用处理器handlers，所有的“繁重”工作由handlers处理。
+#每个handlers知道如何通过特定协议打开URLs，或者如何处理URL打开时的各个方面。
+#例如HTTP重定向或者HTTP cookies。
 
-如果你希望用特定处理器获取URLs你会想创建一个openers，例如获取一个能处理cookie的opener，或者获取一个不重定向的opener。
+#如果你希望用特定处理器获取URLs你会想创建一个openers，例如获取一个能处理cookie的opener，或者获取一个不重定向的opener。
 
-要创建一个 opener，可以实例化一个OpenerDirector，
-然后调用.add_handler(some_handler_instance)。
-同样，可以使用build_opener，这是一个更加方便的函数，用来创建opener对象，他只需要一次函数调用。
-build_opener默认添加几个处理器，但提供快捷的方法来添加或更新默认处理器。
-其他的处理器handlers你或许会希望处理代理，验证，和其他常用但有点特殊的情况。
+#要创建一个 opener，可以实例化一个OpenerDirector，
+#然后调用.add_handler(some_handler_instance)。
+#同样，可以使用build_opener，这是一个更加方便的函数，用来创建opener对象，他只需要一次函数调用。
+#build_opener默认添加几个处理器，但提供快捷的方法来添加或更新默认处理器。
+#其他的处理器handlers你或许会希望处理代理，验证，和其他常用但有点特殊的情况。
 
-install_opener 用来创建（全局）默认opener。这个表示调用urlopen将使用你安装的opener。
-Opener对象有一个open方法。
-该方法可以像urlopen函数那样直接用来获取urls：通常不必调用install_opener，除了为了方便。
-默认的openers有正常状况的handlers：ProxyHandler，UnknownHandler，HTTPHandler，HTTPDefaultErrorHandler， HTTPRedirectHandler，FTPHandler， FileHandler， HTTPErrorProcessor。
-代码中的top_level_url 实际上可以是完整URL(包含"http:"，以及主机名及可选的端口号)。
+#install_opener 用来创建（全局）默认opener。这个表示调用urlopen将使用你安装的opener。
+#Opener对象有一个open方法。
+#该方法可以像urlopen函数那样直接用来获取urls：通常不必调用install_opener，除了为了方便。
+#默认的openers有正常状况的handlers：ProxyHandler，UnknownHandler，HTTPHandler，HTTPDefaultErrorHandler， HTTPRedirectHandler，FTPHandler， FileHandler， HTTPErrorProcessor。
+#代码中的top_level_url 实际上可以是完整URL(包含"http:"，以及主机名及可选的端口号)。
+#
+
+
+#正则表达式
+#  re.match(pattern, string[, flags])  re.search(pattern, string[, flags])
+#  re.match只匹配字符串的开始，如果字符串开始不符合正则表达式，则匹配失败，函数返回None；而re.search匹配整个字符串，直到找到一个匹配
+#  re.split(pattern, string[, maxsplit])
+#  re.findall(pattern, string[, flags])
+#  re.finditer(pattern, string[, flags])
+#  re.sub(pattern, repl, string[, count])
+#  re.subn(pattern, repl, string[, count])
+
+
+#糗事百科
+#1、url抓取页面代码
